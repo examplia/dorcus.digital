@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+.wrapper {
+  max-width: 500px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #ff6b81;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:disabled {
+  background: #ffa3b1;
+  cursor: default;
+}
+
+button:hover:not(:disabled) {
+  background: #ff4c61;
+}
+
+#catContainer {
+  margin-top: 2rem;
+}
+
+#catImage {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
