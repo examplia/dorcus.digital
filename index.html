@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Random Cat Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <h1>🐱 Random Cat Generator</h1>
+    <button id="catBtn">Show me a cat!</button>
+    <div id="catContainer">
+      <img id="catImage" src="" alt="Click the button to see a cat">
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('catBtn');
+    const img = document.getElementById('catImage');
+
+    btn.addEventListener('click', async () => {
+      btn.disabled = true;
+      btn.textContent = 'Loading…';
+      try {
+        const res = await fetch('https://aws.random.cat/meow');
+        const { file } = await res.json();
+        img.src = file;
+      } catch (e) {
+        alert('Oops! Couldn’t fetch a cat. Try again.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Show me a cat!';
+      }
+    });
+  </script>
+
+</body>
+</html>
